@@ -1,5 +1,5 @@
 //Script - systemed.fr
-//Generated - Wed, 12 Feb 2020 21:29:23 +0000 by Cambium Media
+//Generated - Wed, 12 Feb 2020 21:40:43 +0000 by Cambium Media
 
 var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
@@ -36,7 +36,7 @@ cambiumAd.initTimeout = function(){
 }
 
 cambiumAd.setPbjsAdUnits = function(){
-	pbjsAdUnits = []
+	var pbjsAdUnits = []
 	if(cambiumAd.inventoryType == 'desktop'){
 		pbjsAdUnits.push({
 		    "code": "Megabanniere_Header",

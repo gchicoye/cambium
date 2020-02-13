@@ -1,5 +1,5 @@
 //Script - cdeco.fr
-//Generated - Wed, 12 Feb 2020 21:40:44 +0000 by Cambium Media
+//Generated - Thu, 13 Feb 2020 18:27:10 +0000 by Cambium Media
 
 var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
@@ -361,7 +361,7 @@ cambiumAd.refresh = function(googleSlots){
 
 cambiumAd.mapSlot = function(slot){
 	var slotName = slot.getAdUnitPath();
-	if(slotName.substring(0,4) == "dev_"){
+	if(["dev_", "Dev_"].indexOf(slotName.substring(0,4)) !== -1){
 		slotName = slotName.substring(4)
 	}
 	var foo = slotName.split("_")

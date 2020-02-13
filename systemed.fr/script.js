@@ -1,5 +1,5 @@
 //Script - systemed.fr
-//Generated - Thu, 13 Feb 2020 18:38:39 +0000 by Cambium Media
+//Generated - Thu, 13 Feb 2020 22:12:30 +0000 by Cambium Media
 
 var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
@@ -382,6 +382,16 @@ cambiumAd.setPbjsAdUnits = function(){
 	}
 	cambiumAd.pbjsAdUnits = pbjsAdUnits
 }
+
+cambiumAd.getConsentString = function(){
+	document.cookie.split(";").forEach(function(element){
+		if(element.substr(0,10) == " euconsent"){
+			return element.split("=")[1]
+		}
+	})
+	return false
+}
+
 cambiumAd.setUpPbjs = function(){
 	pbjs.que.push(function(){
 		pbjs.aliasBidder('appnexus', 'msqapptra');
@@ -416,20 +426,34 @@ cambiumAd.setUpPbjs = function(){
 				}
 			},
 		}
-		pbjs.setConfig({
-			bidderTimeout: cambiumAd.prebidTimeout,
+		var config = {
+			bidderTimeout: cambiumAd.timeout,
 			priceGranularity: 'dense',
-			consentManagement: {
-				cmpApi: 'iab',
-				timeout: 8000,
-				allowAuctionWithoutConsent: true
+			currency: {
+				adServerCurrency: 'EUR',
+				granularityMultiplier: 1,
+				rates: { 'USD': { 'EUR': 0.91 }}
 			},
-			'currency': {
-				'adServerCurrency': 'EUR',
-				'granularityMultiplier': 1,
-				'rates': { 'USD': { 'EUR': 0.91 }}
+			consentManagement: {
+				gdpr : {
+					cmpApi: 'static',
+					allowAuctionWithoutConsent: true
+				}	
 			}
-		});
+		}
+		var consentString = cambiumAd.getConsentString()
+		if(consentString !== false){
+			config.consentManagement.gdpr.consentData =  {
+				'gdprApplies': true,
+				'hasGlobalScope': false,
+				'consentData': consentString
+			}
+			config.consentManagement.gdpr.getVendorConsents = {
+				metadata: consentString
+			}
+		}
+		console.log('[pbjsConfig]',config)
+		pbjs.setConfig(config);
 	});
 	return true;
 }

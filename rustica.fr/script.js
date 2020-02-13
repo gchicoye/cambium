@@ -1,5 +1,5 @@
 //Script - rustica.fr
-//Generated - Thu, 13 Feb 2020 18:27:09 +0000 by Cambium Media
+//Generated - Thu, 13 Feb 2020 18:38:38 +0000 by Cambium Media
 
 var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
@@ -512,6 +512,11 @@ cambiumAd.refresh = function(googleSlots){
 
 cambiumAd.mapSlot = function(slot){
 	var slotName = slot.getAdUnitPath();
+	if(slotName.split("/").length == 3){
+		slotName = slotName.split("/")[2];
+	} else {
+		return
+	}
 	if(["dev_", "Dev_"].indexOf(slotName.substring(0,4)) !== -1){
 		slotName = slotName.substring(4)
 	}

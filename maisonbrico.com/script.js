@@ -1,5 +1,5 @@
 //Script - maisonbrico.com
-//Generated - Fri, 14 Feb 2020 09:15:42 +0000 by Cambium Media
+//Generated - Fri, 14 Feb 2020 17:16:24 +0000 by Cambium Media
 
 var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
@@ -411,13 +411,15 @@ cambiumAd.setUpPbjs = function(){
 		}
 		var consentString = cambiumAd.getConsentString()
 		if(consentString !== false){
-			config.consentManagement.gdpr.consentData =  {
-				'gdprApplies': true,
-				'hasGlobalScope': false,
-				'consentData': consentString
+			config.consentManagement.gdpr.consentData =  {}
+			config.consentManagement.gdpr.consentData.getConsentData = {
+				gdprApplies: true,
+				hasGlobalScope: false,
+				consentData: consentString
 			}
-			config.consentManagement.gdpr.getVendorConsents = {
-				metadata: consentString
+			config.consentManagement.gdpr.consentData.getVendorConsents = {
+				metadata: consentString,
+				gdprApplies: true,
 			}
 		}
 		console.log('[pbjsConfig]',config)

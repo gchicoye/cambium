@@ -1,5 +1,5 @@
 //Script - systemed.fr
-//Generated - Thu, 13 Feb 2020 22:12:30 +0000 by Cambium Media
+//Generated - Fri, 14 Feb 2020 09:15:43 +0000 by Cambium Media
 
 var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
@@ -384,12 +384,13 @@ cambiumAd.setPbjsAdUnits = function(){
 }
 
 cambiumAd.getConsentString = function(){
+	var output = false
 	document.cookie.split(";").forEach(function(element){
 		if(element.substr(0,10) == " euconsent"){
-			return element.split("=")[1]
+			output = element.split("=")[1]
 		}
 	})
-	return false
+	return output
 }
 
 cambiumAd.setUpPbjs = function(){

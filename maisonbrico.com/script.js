@@ -1,5 +1,5 @@
 //Script - maisonbrico.com
-//Generated - Fri, 14 Feb 2020 17:16:24 +0000 by Cambium Media
+//Generated - Thu, 20 Feb 2020 19:08:05 +0000 by Cambium Media
 
 var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
@@ -50,7 +50,8 @@ cambiumAd.setPbjsAdUnits = function(){
 		            "bidder": "aol",
 		            "params": {
 		                "placement": 6660135,
-		                "network": 4950.1
+		                "network": 4950.1,
+		                "server": "adserver-eu.adtech.advertising.com"
 		            }
 		        },
 		        {
@@ -103,7 +104,8 @@ cambiumAd.setPbjsAdUnits = function(){
 		            "bidder": "aol",
 		            "params": {
 		                "placement": 6660136,
-		                "network": 4950.1
+		                "network": 4950.1,
+		                "server": "adserver-eu.adtech.advertising.com"
 		            }
 		        },
 		        {
@@ -188,7 +190,8 @@ cambiumAd.setPbjsAdUnits = function(){
 		            "bidder": "aol",
 		            "params": {
 		                "placement": 6660133,
-		                "network": 4950.1
+		                "network": 4950.1,
+		                "server": "adserver-eu.adtech.advertising.com"
 		            }
 		        },
 		        {
@@ -243,7 +246,8 @@ cambiumAd.setPbjsAdUnits = function(){
 		            "bidder": "aol",
 		            "params": {
 		                "placement": 6660138,
-		                "network": 4950.1
+		                "network": 4950.1,
+		                "server": "adserver-eu.adtech.advertising.com"
 		            }
 		        },
 		        {
@@ -296,7 +300,8 @@ cambiumAd.setPbjsAdUnits = function(){
 		            "bidder": "aol",
 		            "params": {
 		                "placement": 6668675,
-		                "network": 4950.1
+		                "network": 4950.1,
+		                "server": "adserver-eu.adtech.advertising.com"
 		            }
 		        },
 		        {
